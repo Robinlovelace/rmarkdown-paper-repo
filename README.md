@@ -98,7 +98,7 @@ plot(matrix(rpois(n = 2e3, lambda = 9), ncol = 2))
 
 ![A basic plot.](figures/basic-plot-1.png)
 
-See the results of using `bookdown::pdf_document2` output option in the repos Releases tab. It's good practice to avoid placing binary file formats such as .pdf files in your github repos to keep them small and easy to navigate and read.
+See the results of using `bookdown::pdf_document2` output option in the repo's [Releases](https://github.com/Robinlovelace/rmarkdown-paper-repo/releases) tab. This is a good place to publish submitted and published versions of your paper. (It's good practice to avoid placing binary file formats such as .pdf files in your github repos to keep them small and easy to navigate and read.)
 
 Conclusion
 ==========
