@@ -19,8 +19,9 @@ This repo is designed to make reproducible and open source write-ups easy. It ha
 
 - [references.bib](references.bib): Add your references here in .bib format. Read more about the trusty .bib format at [bibtex.org](http://www.bibtex.org/Format/) or check-out an excellent paper on handling `.bib` files in R based on the **RefManageR** package [@mclean2014straightforward].
 - [figures/](): this is where to store your figures.
-- [input/](): put public facing example data here
-- [output/](): folder of output data
+- [input/](https://github.com/Robinlovelace/rmarkdown-paper-repo/tree/master/input): put public facing example data here
+- [output/](https://github.com/Robinlovelace/rmarkdown-paper-repo/tree/master/output): folder of output data
+- [code/](https://github.com/Robinlovelace/rmarkdown-paper-repo/tree/master/code): folder to place your reproducible scripts, in R or another language. We refrain from using a folder called R as that could conflict with future efforts to convert your paper into an R package.
 - [README.Rmd](): the document your reading. You can write you paper as a `github_document` in the README for maximum simplicity and ease of viewing. Later you could change the output to something more fancy, e.g. using the following YAML heading, which makes use of the [**rticles**](https://github.com/rstudio/rticles) package:
 
 ```
@@ -79,10 +80,10 @@ input1 = data.frame(x = 1:9)
 input1 = readr::write_csv(input1, "input/example-input1.csv")
 ```
 
+To source code stored in the code directory, you can use the `source()` function:
 
 ```{r, message=FALSE}
-result = data.frame(y = input1 ^ 3)
-readr::write_csv(x = result, "output/result.csv")
+source("code/process-data.R")
 ```
 
 
@@ -98,6 +99,16 @@ plot(matrix(rpois(n = 2e3, lambda = 9), ncol = 2))
 
 Conclusions go here. 
 
-Reproducible research is not only accessible, it's fun!
+In conclusion this template repo provides some ideas and content that should help you create a more reproducible workflow when writing R code. To test if it's reproducible, try to reproduce it:
+
+- Clone or download and unzip the repo, e.g. by pressing the `Clone or Download` button at [github.com/Robinlovelace/rmarkdown-paper-repo](https://github.com/Robinlovelace/rmarkdown-paper-repo/archive/master.zip).
+- Open the project in RStudio, e.g. by File > Open File.
+- Open the README.Rmd file and click on the 'knit' button to see if it rebuilds.
+
+There are many further steps you could take, including creating a Docker container, Continuous Integration and package development. However, I think this small repo template should serve most paper writing needs. As Albert Einstein [put it](http://quoteinvestigator.com/2011/05/13/einstein-simple/):
+
+> It can scarcely be denied that the supreme goal of all theory is to make the irreducible basic elements as simple and as few as possible without having to surrender the adequate representation of a single datum of experience.
+
+In conclusion, this small template repo provides some basic guidance and content that should make reproducible report/paper writing straightforward and fun.
 
 ## References
